@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="base ::headpart"></head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<nav th:replace="base :: navpart"></nav>
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="toaster"></div>
+
+                    <main class="wrapper">
+                        <section class="section-form">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Rules</th>
+                                    <th>Wifi</th>
+                                    <th>Cable</th>
+                                    <th>Private Bathroom</th>
+                                    <th>Availablity</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="p:${room}">
+                                    <td th:text="${p.description}"></td>
+                                    <td th:text="${p.rules}" ></td>
+                                    <td th:text="${p.wifi}" ></td>
+                                    <td th:text="${p.cable}" ></td>
+                                    <td th:text="${p.bathroom}" ></td>
+                                    <td th:text="${p.availablity}" ></td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+                        </section>
+
+
+                    </main>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Contact Section -->
+
+
+<!-- jQuery -->
+<script src="vendor/jquery/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+<!-- Theme JavaScript -->
+<script src="js/grayscale.min.js"></script>
+
+</body>
+
+</html>

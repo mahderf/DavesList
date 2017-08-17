@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="base ::headpart"></head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<nav th:replace="base :: navpart"></nav>
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="toaster"></div>
+
+                    <main class="wrapper">
+                        <section class="section-form">
+                            <h1>Test</h1>
+                            <h1>Entry Form</h1>
+                            <form action="#" th:action="@{/enterroom}" th:object="${newroom}" method="post">
+                                <input type="hidden" th:field="*{id}" />
+                                <div class="form-group">
+                                    <label class="form-label form-label--required">
+                                        Description:
+                                    </label>
+
+                                    <div class="form-addon" data-states-for="description">
+                                        <div class="form-addon__addon">
+                                            <span class="icon-name"></span>
+                                        </div>
+
+                                        <input type="text"
+                                               th:field="*{description}"
+                                        />
+
+                                        <span class="form-addon__icon icon-valid"></span>
+                                        <span class="form-addon__icon icon-invalid"></span>
+                                    </div>
+
+                                    <div th:if="${#fields.hasErrors('description')}"
+                                         th:errors="*{description}"><small class="form-error"
+                                                                         data-errors-when="valueMissing" >This field is required
+                                    </small>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label form-label--required">
+                                        Rules:
+                                    </label>
+
+                                    <div class="form-addon" data-states-for="name">
+                                        <div class="form-addon__addon">
+                                            <span class="icon-name"></span>
+                                        </div>
+
+                                        <input type="text"
+                                               th:field="*{rules}"
+                                        />
+                                        <span class="form-addon__icon icon-valid"></span>
+                                        <span class="form-addon__icon icon-invalid"></span>
+                                    </div>
+
+                                    <div th:if="${#fields.hasErrors('rules')}"
+                                         th:errors="*{rules}"><small >This field is required
+                                    </small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label form-label--required">
+                                        Wifi:
+                                    </label>
+
+                                        <div class="form-addon__addon">
+                                            <span class="icon-email"></span>
+                                            <div>
+                                                <p><input type="checkbox" value="yes" th:field="*{wifi}" checked> yes</p>
+                                                <p><input type="checkbox" value="no" th:field="*{wifi}"> no</p>
+                                            </div>
+
+                                            <span class="form-addon__icon icon-valid"></span>
+                                            <span class="form-addon__icon icon-invalid"></span>
+                                        </div>
+
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="form-label form-label--required">
+                                        Cable:
+                                    </label>
+                                        <div>
+                                            <select data-placeholder="Cable" class="chzn-select" style="width:115px;" tabindex="2" th:field="*{cable}" id="cable">
+                                                <option value="none">none</option>
+                                                <option value="basic">basic</option>
+                                                <option value="premium">premium</option>
+                                            </select>
+
+                                        </div>
+
+                                    </div>
+
+                                <div class="form-group">
+                                    <label class="form-label form-label--required">
+                                        Private Bathroom:
+                                    </label>
+
+                                    <div class="form-addon" data-states-for="email">
+                                        <div class="form-addon__addon">
+                                            <span class="icon-email"></span>
+                                            <div>
+                                                <p><input type="checkbox" value="yes" th:field="*{bathroom}" checked> yes</p>
+                                                <p><input type="checkbox" value="no" th:field="*{bathroom}"> no</p>
+                                            </div>
+
+                                        <span class="form-addon__icon icon-valid"></span>
+                                        <span class="form-addon__icon icon-invalid"></span>
+                                    </div>
+
+                                </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label form-label--required">
+                                        Availablity:
+                                    </label>
+
+                                    <div class="form-addon" data-states-for="email">
+                                        <div class="form-addon__addon">
+                                            <span class="icon-email"></span>
+                                            <div>
+                                                <p><input type="checkbox" value="yes" th:field="*{availablity}" checked> yes</p>
+                                                <p><input type="checkbox" value="no" th:field="*{availablity}"> no</p>
+                                            </div>
+
+                                            <span class="form-addon__icon icon-valid"></span>
+                                            <span class="form-addon__icon icon-invalid"></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-footer">
+                                    <button type="submit" class="btn btn-primary" class="button">ENTER</button>
+                                </div>
+                            </form>
+                        </section>
+                    </main>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
